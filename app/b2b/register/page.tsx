@@ -63,16 +63,16 @@ export default function B2BRegister() {
             </p>
             <ul className="space-y-4 text-sm font-medium text-slate-700">
               <li className="flex gap-3">
-                <span className="text-blue-600">鈼?/span> Tiered Wholesale Pricing
+                <div className="w-1.5 h-1.5 rounded-full bg-blue-600 mt-1.5 flex-shrink-0" /> Tiered Wholesale Pricing
               </li>
               <li className="flex gap-3">
-                <span className="text-blue-600">鈼?/span> Custom Packaging Solutions
+                <div className="w-1.5 h-1.5 rounded-full bg-blue-600 mt-1.5 flex-shrink-0" /> Custom Packaging Solutions
               </li>
               <li className="flex gap-3">
-                <span className="text-blue-600">鈼?/span> Direct ERP Integration
+                <div className="w-1.5 h-1.5 rounded-full bg-blue-600 mt-1.5 flex-shrink-0" /> Direct ERP Integration
               </li>
               <li className="flex gap-3">
-                <span className="text-blue-600">鈼?/span> Priority Logistics Support
+                <div className="w-1.5 h-1.5 rounded-full bg-blue-600 mt-1.5 flex-shrink-0" /> Priority Logistics Support
               </li>
             </ul>
           </div>
