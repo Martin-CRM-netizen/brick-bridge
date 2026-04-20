@@ -8,13 +8,19 @@ function Upload-File {
     if (-not $content) { $content = "" }
     $base64Content = [Convert]::ToBase64String([System.Text.Encoding]::UTF8.GetBytes($content))
     
+    $existingFile = try { gh api repos/$repo/contents/$repoPath --jq .sha } catch { $null }
+    
     $json = @{
-        message = "Upload $repoPath via API"
+        message = "Update $repoPath via API"
         content = $base64Content
         branch = $branch
-    } | ConvertTo-Json
+    }
     
-    $json | gh api repos/$repo/contents/$repoPath -X PUT --input -
+    if ($existingFile) {
+        $json.sha = $existingFile
+    }
+    
+    $json | ConvertTo-Json | gh api repos/$repo/contents/$repoPath -X PUT --input -
 }
 
 $files = Get-ChildItem -Recurse -File | Where-Object { 
